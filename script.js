@@ -112,6 +112,8 @@ const playlist = [
   },
 ];
 
+const LIVEROOM_URL = "https://live.bilibili.com/1832487697";
+
 const filterLabels = {
   all: "全部歌曲",
   vocaloid: "术力口",
@@ -125,6 +127,7 @@ const resultCount = document.querySelector("#result-count");
 const resultTitle = document.querySelector("#result-title");
 const emptyState = document.querySelector("#empty-state");
 const filterTabs = document.querySelectorAll(".filter-tab");
+const liveRoomButton = document.querySelector("#live-room-button");
 
 let currentFilter = "all";
 
@@ -214,6 +217,12 @@ filterTabs.forEach((tab) => {
   });
 });
 
+function openLiveRoom() {
+  window.open(LIVEROOM_URL, "_blank", "noopener");
+}
+
 searchInput.addEventListener("input", renderSongs);
+
+liveRoomButton.addEventListener("click", openLiveRoom);
 
 renderSongs();
