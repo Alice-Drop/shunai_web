@@ -113,6 +113,7 @@ const playlist = [
 ];
 
 const LIVEROOM_URL = "https://live.bilibili.com/1832487697";
+const SHUNAI_URL = "https://space.bilibili.com/3706986262694258";
 
 const filterLabels = {
   all: "全部歌曲",
@@ -128,6 +129,8 @@ const resultTitle = document.querySelector("#result-title");
 const emptyState = document.querySelector("#empty-state");
 const filterTabs = document.querySelectorAll(".filter-tab");
 const liveRoomButton = document.querySelector("#live-room-button");
+let avatar = document.getElementById("avatar");
+
 
 let currentFilter = "all";
 
@@ -221,8 +224,13 @@ function openLiveRoom() {
   window.open(LIVEROOM_URL, "_blank", "noopener");
 }
 
+function visitShunai(){
+  window.open(SHUNAI_URL);
+}
+
 searchInput.addEventListener("input", renderSongs);
 
 liveRoomButton.addEventListener("click", openLiveRoom);
+avatar.addEventListener("click", visitShunai);
 
 renderSongs();

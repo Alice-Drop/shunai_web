@@ -316,6 +316,7 @@ h2 {
   /*height: 330px;*/
   margin: auto;
   animation: floaty 4.5s ease-in-out infinite;
+  cursor: pointer;
 }
 
 @keyframes floaty {
